@@ -3,17 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
-    app:startDestination="@id/fragment_1">
+    app:startDestination="@id/calculate_water_fragment">
 
     <fragment
-        android:id="@+id/fragment_1"
-        android:name="com.example.testapplication.Fragment_1"
+        android:id="@+id/calculate_water_fragment"
+        android:name="com.example.testapplication.CalculateWaterFragment"
         android:label="fragment_1_title"
-        tools:layout="@layout/fragment_1">
+        tools:layout="@layout/calculate_water_fragment">
     </fragment>
     <fragment
-        android:id="@+id/fragment_2"
-        android:name="com.example.testapplication.Fragment_2"
+        android:id="@+id/fish_list_fragment"
+        android:name="com.example.testapplication.FishListFragment"
         android:label="fragment_2_title"
-        tools:layout="@layout/fragment_2" />
+        tools:layout="@layout/fish_list_fragment" />
 </navigation>

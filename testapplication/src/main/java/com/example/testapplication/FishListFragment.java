@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Fragment_2#newInstance} factory method to
+ * Use the {@link FishListFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Fragment_2 extends Fragment {
+public class FishListFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +24,7 @@ public class Fragment_2 extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Fragment_2() {
+    public FishListFragment() {
         // Required empty public constructor
     }
 
@@ -37,8 +37,8 @@ public class Fragment_2 extends Fragment {
      * @return A new instance of fragment Fragment_2.
      */
     // TODO: Rename and change types and number of parameters
-    public static Fragment_2 newInstance(String param1, String param2) {
-        Fragment_2 fragment = new Fragment_2();
+    public static FishListFragment newInstance(String param1, String param2) {
+        FishListFragment fragment = new FishListFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,6 +59,6 @@ public class Fragment_2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_2, container, false);
+        return inflater.inflate(R.layout.fish_list_fragment, container, false);
     }
 }

@@ -6,9 +6,9 @@ import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
 
 @InjectViewState
-public class Fragment_1Presenter extends MvpPresenter<Fragment_1View> {
+public class CalculateWaterFragmentPresenter extends MvpPresenter<CalculateWaterFragmentView> {
 
-    public Fragment_1Presenter() {
+    public CalculateWaterFragmentPresenter() {
 //        getViewState().countWater();
     }
 
