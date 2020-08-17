@@ -1,5 +1,7 @@
 package com.example.testapplication;
 
+import android.util.Log;
+
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
 
@@ -11,6 +13,7 @@ public class Fragment_1Presenter extends MvpPresenter<Fragment_1View> {
     }
 
     public void onCountClick() {
+        Log.v("===>", "onCountClick");
         getViewState().countWater();
     }
 }
