@@ -5,11 +5,15 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 
-import com.arellomobile.mvp.MvpView;
-import com.arellomobile.mvp.viewstate.strategy.AddToEndSingleStrategy;
-import com.arellomobile.mvp.viewstate.strategy.StateStrategyType;
+import moxy.MvpView;
+import moxy.viewstate.strategy.AddToEndSingleStrategy;
+import moxy.viewstate.strategy.SkipStrategy;
+import moxy.viewstate.strategy.StateStrategyType;
+
 
 public interface CalculateWaterFragmentView extends MvpView {
     @StateStrategyType(AddToEndSingleStrategy.class)
-    void countWater();
+    void printResult(String value);
+    @StateStrategyType(SkipStrategy.class)
+    void printError(String message);
 }

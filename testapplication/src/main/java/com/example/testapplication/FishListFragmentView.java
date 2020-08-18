@@ -1,6 +1,6 @@
 package com.example.testapplication;
 
-import com.arellomobile.mvp.MvpView;
+import moxy.MvpView;
 
 public interface FishListFragmentView extends MvpView {
 }
