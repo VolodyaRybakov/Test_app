@@ -22,12 +22,13 @@ import butterknife.Unbinder;
 import moxy.MvpAppCompatFragment;
 import moxy.presenter.InjectPresenter;
 
-public class FishListFragment extends MvpAppCompatFragment implements FishListFragmentView {
+public class FishListFragment extends MvpAppCompatFragment implements FishListFragmentView, RemoveClickListner {
 
     @InjectPresenter
     FishListFragmentPresenter mFishListFragmentPresenter;
 
     private Unbinder unbinder;
+    private FishAdapter adapter;
 
     @BindView(R.id.recycler_view)
     RecyclerView mRecyclerView;
@@ -46,6 +47,8 @@ public class FishListFragment extends MvpAppCompatFragment implements FishListFr
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        Log.v("===>", "On create View");
+
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fish_list_fragment, container, false);
 
@@ -53,7 +56,7 @@ public class FishListFragment extends MvpAppCompatFragment implements FishListFr
 
         unbinder = ButterKnife.bind(this, view);
 
-        FishAdapter adapter = new FishAdapter(getContext(), fishes);
+        adapter = new FishAdapter(getContext(), fishes, this);
         mRecyclerView.setAdapter(adapter);
 
         return view;
@@ -64,6 +67,7 @@ public class FishListFragment extends MvpAppCompatFragment implements FishListFr
         fishes.add(new Fish("2", 2, 2, "2"));
         fishes.add(new Fish("3", 3, 3, "3"));
         fishes.add(new Fish("4", 4, 4, "4"));
+        fishes.add(new Fish("5", 5, 5, "5"));
     }
 
     @OnClick(R.id.add_fish)
@@ -77,6 +81,12 @@ public class FishListFragment extends MvpAppCompatFragment implements FishListFr
                 "Вы нажали на кнопочку",
                 Toast.LENGTH_SHORT);
         toast.show();
+    }
+
+    @Override
+    public void OnRemoveClick(int index) {
+        fishes.remove(index);
+        adapter.notifyData(fishes);
     }
 
     @Override

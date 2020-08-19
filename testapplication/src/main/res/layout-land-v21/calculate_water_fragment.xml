@@ -35,29 +35,29 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
         </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tfAquariumTemperature"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_weight="1"
-        android:hint="Текущая температура воды"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/еаAquariumValue"
-        app:layout_constraintTop_toTopOf="@+id/еаAquariumValue">
-
-        <EditText
-            android:id="@+id/etAquariumTemperature"
-            android:layout_width="match_parent"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tfAquariumTemperature"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="numberDecimal"
-            app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:hint="Текущая температура воды"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/еаAquariumValue"
+            app:layout_constraintTop_toTopOf="@+id/еаAquariumValue">
+
+            <EditText
+                android:id="@+id/etAquariumTemperature"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tfWishTemperature"
@@ -84,29 +84,29 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
         </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tfHaveTemperature"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_weight="1"
-        android:hint="Температура имеющийся воды для замены"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tfWishTemperature"
-        app:layout_constraintTop_toTopOf="@+id/tfWishTemperature">
-
-        <EditText
-            android:id="@+id/etHaveTemperature"
-            android:layout_width="match_parent"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tfHaveTemperature"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="numberDecimal"
-            app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:hint="Температура имеющийся воды для замены"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tfWishTemperature"
+            app:layout_constraintTop_toTopOf="@+id/tfWishTemperature">
+
+            <EditText
+                android:id="@+id/etHaveTemperature"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/btCount"
@@ -130,17 +130,17 @@
             android:layout_marginTop="16dp"
             android:text=" Необходимый объём воды для замены:"
             app:layout_constraintStart_toStartOf="@+id/еаAquariumValue"
-            app:layout_constraintTop_toBottomOf="@+id/btCount" />
+            app:layout_constraintTop_toBottomOf="@+id/btCount"/>
 
-    <TextView
-        android:id="@+id/tvAnswer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:text="-"
-        app:layout_constraintBottom_toBottomOf="@+id/textView2"
-        app:layout_constraintStart_toEndOf="@+id/textView2" />
+        <TextView
+            android:id="@+id/tvAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="-"
+            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+            app:layout_constraintStart_toEndOf="@+id/textView2"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
