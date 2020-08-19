@@ -24,12 +24,12 @@ public class FishAdapter extends RecyclerView.Adapter<FishAdapter.FishViewHolder
 
     private LayoutInflater inflater;
     private ArrayList<Fish> fishes;
-    private RemoveClickListner mListner;
+    private RemoveClickListner mListener;
 
-    public FishAdapter(Context context, ArrayList<Fish> fishes, FishListFragment listner){
+    public FishAdapter(Context context, ArrayList<Fish> fishes, FishListFragment listener){
         this.fishes = fishes;
         this.inflater = LayoutInflater.from(context);
-        mListner=listner;
+        mListener=listener;
     }
 
     @NonNull
@@ -42,9 +42,9 @@ public class FishAdapter extends RecyclerView.Adapter<FishAdapter.FishViewHolder
     @Override
     public void onBindViewHolder(@NonNull FishViewHolder holder, int position) {
         Fish fish = fishes.get(position);
-        holder.mFishNamdeView.setText(fish.getName());
+        holder.mFishNameView.setText(fish.getName());
         holder.mFishHeightView.setText(String.valueOf(fish.getHeight()));
-        holder.mFishLenghtView.setText(String.valueOf(fish.getLength()));
+        holder.mFishLengthView.setText(String.valueOf(fish.getLength()));
         holder.mFishKindView.setText(fish.getKind());
     }
 
@@ -61,11 +61,11 @@ public class FishAdapter extends RecyclerView.Adapter<FishAdapter.FishViewHolder
     public class FishViewHolder extends RecyclerView.ViewHolder {
 
         @BindView(R.id.name)
-        TextView mFishNamdeView;
+        TextView mFishNameView;
         @BindView(R.id.height)
         TextView mFishHeightView;
         @BindView(R.id.length)
-        TextView mFishLenghtView;
+        TextView mFishLengthView;
         @BindView(R.id.kind)
         TextView mFishKindView;
         @BindView(R.id.main_layout)
@@ -87,7 +87,7 @@ public class FishAdapter extends RecyclerView.Adapter<FishAdapter.FishViewHolder
             mDeleteButton.setOnClickListener(new AdapterView.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    mListner.OnRemoveClick(getAdapterPosition()
+                    mListener.OnRemoveClick(getAdapterPosition()
                     );
                 }
             });

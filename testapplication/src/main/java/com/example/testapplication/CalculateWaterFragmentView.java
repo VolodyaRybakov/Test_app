@@ -9,6 +9,6 @@ import moxy.viewstate.strategy.StateStrategyType;
 public interface CalculateWaterFragmentView extends MvpView {
     @StateStrategyType(AddToEndSingleStrategy.class)
     void printResult(String value);
-    @StateStrategyType(SkipStrategy.class)
+    @StateStrategyType(AddToEndSingleStrategy.class)
     void printError(String message);
 }

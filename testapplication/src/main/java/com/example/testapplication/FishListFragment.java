@@ -1,14 +1,20 @@
 package com.example.testapplication;
 
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.widget.PopupMenu;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.os.CancellationSignal;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -22,18 +28,20 @@ import butterknife.Unbinder;
 import moxy.MvpAppCompatFragment;
 import moxy.presenter.InjectPresenter;
 
-public class FishListFragment extends MvpAppCompatFragment implements FishListFragmentView, RemoveClickListner {
+public class FishListFragment extends MvpAppCompatFragment implements FishListFragmentView, RemoveClickListner, AddFishClickListener {
 
     @InjectPresenter
     FishListFragmentPresenter mFishListFragmentPresenter;
 
     private Unbinder unbinder;
     private FishAdapter adapter;
+    private AlertDialog dialog;
 
     @BindView(R.id.recycler_view)
     RecyclerView mRecyclerView;
     @BindView(R.id.add_fish)
     FloatingActionButton mAddFishButton;
+
 
     ArrayList<Fish> fishes = new ArrayList<>();
 
@@ -62,7 +70,7 @@ public class FishListFragment extends MvpAppCompatFragment implements FishListFr
         return view;
     }
 
-    private void setInitialData(){
+    private void setInitialData() {
         fishes.add(new Fish("1", 1, 1, "1"));
         fishes.add(new Fish("2", 2, 2, "2"));
         fishes.add(new Fish("3", 3, 3, "3"));
@@ -76,11 +84,27 @@ public class FishListFragment extends MvpAppCompatFragment implements FishListFr
     }
 
     @Override
-    public void addFish(){
+    public void addFish() {
         Toast toast = Toast.makeText(getActivity().getApplicationContext(),
                 "Вы нажали на кнопочку",
                 Toast.LENGTH_SHORT);
         toast.show();
+        Log.v("===>", "add fish");
+        dialog = AddFishDialog.getDialog(getActivity(), this);
+        dialog.show();
+        //getFishValues();
+    }
+
+    private void getFishValues() {
+
+    }
+
+    @Override
+    public void onAddFishInDialogClick(String name, float length, float height, String kind) {
+        Log.v("===>", "OK button");
+
+        fishes.add(new Fish(name, length, height, kind));
+        adapter.notifyData(fishes);
     }
 
     @Override
