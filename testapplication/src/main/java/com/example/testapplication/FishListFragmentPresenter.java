@@ -9,7 +9,7 @@ public class FishListFragmentPresenter extends MvpPresenter<FishListFragmentView
     public FishListFragmentPresenter() {}
 
     public void onAddFishClick(){
-
+        getViewState().addFish();
     }
 
 }

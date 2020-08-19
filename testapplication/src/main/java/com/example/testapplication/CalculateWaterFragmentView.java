@@ -1,10 +1,5 @@
 package com.example.testapplication;
 
-import android.os.Bundle;
-import android.view.View;
-
-import androidx.annotation.Nullable;
-
 import moxy.MvpView;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.SkipStrategy;
