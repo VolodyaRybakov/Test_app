@@ -8,9 +8,6 @@ import static java.lang.Math.abs;
 @InjectViewState
 public class CalculateWaterFragmentPresenter extends MvpPresenter<CalculateWaterFragmentView> {
 
-    public CalculateWaterFragmentPresenter() {
-    }
-
     public void onCountClick(float aquariumValue, float aquariumTemperature, float wishTemperature, float haveTemperature) {
         float result = calculateWaterTemperature(aquariumValue, aquariumTemperature, haveTemperature, wishTemperature);
         if (result == -1) {

@@ -41,7 +41,8 @@ public class FishListFragment extends MvpAppCompatFragment implements FishListFr
 
     ArrayList<Fish> fishes = new ArrayList<>();
     final ArrayList<Fish> defaultFishList = new ArrayList(Arrays.asList(new Fish("Заглушка", 0, 0, "?")));
-    private ArrayList<String> fishKinds = new ArrayList<>();
+    private  ArrayList<String> fishKinds = new ArrayList<>();
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -80,6 +81,7 @@ public class FishListFragment extends MvpAppCompatFragment implements FishListFr
     public void addFish() {
         dialog = AddFishDialog.getDialog(getActivity(), this, fishKinds);
         dialog.show();
+        //getFishValues();
     }
 
     @Override
