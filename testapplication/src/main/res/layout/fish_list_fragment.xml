@@ -26,5 +26,3 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <!--        android:text="@string/hello_blank_fragment"-->

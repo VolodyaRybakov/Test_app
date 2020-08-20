@@ -49,7 +49,6 @@ public class CalculateWaterFragment extends MvpAppCompatFragment implements Calc
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.v("===>", "On create");
     }
 
     @Nullable
@@ -57,17 +56,10 @@ public class CalculateWaterFragment extends MvpAppCompatFragment implements Calc
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        Log.v("===>", "On create view");
         View view = inflater.inflate(R.layout.calculate_water_fragment, container, false);
         unbinder = ButterKnife.bind(this, view);
         return view;
     }
-
-//    @Override
-//    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-//        super.onViewCreated(view, savedInstanceState);
-//    }
-
 
     @OnClick(R.id.btCount)
     void onCountClick() {
@@ -77,7 +69,7 @@ public class CalculateWaterFragment extends MvpAppCompatFragment implements Calc
                     Float.parseFloat(String.valueOf(mWishTemperatureView.getText())),
                     Float.parseFloat(String.valueOf(mHasTemperatureView.getText())));
         } catch (NumberFormatException e){
-            printError("Недостаточно данных для проведения расчётов");
+            printError(R.string.not_enough_data);
         }
     }
 
@@ -87,7 +79,7 @@ public class CalculateWaterFragment extends MvpAppCompatFragment implements Calc
     }
 
     @Override
-    public void printError(String message) {
+    public void printError(int message) {
         Toast toast = Toast.makeText(getActivity().getApplicationContext(),
                 message,
                 Toast.LENGTH_SHORT);

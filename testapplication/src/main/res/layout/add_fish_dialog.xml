@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="Укажите параметры\nсвоей рыбки"
+        android:text="@string/input_fish_params"
         android:background="@color/primary"
         android:textColor="@color/primary_text"
         android:textSize="18dp"
@@ -24,7 +24,7 @@
         android:id="@+id/tilFishName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Имя рыбки"
+        android:hint="@string/fish_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dialog_header">
@@ -40,7 +40,7 @@
         android:id="@+id/tilFishLength"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Длина рыбки"
+        android:hint="@string/fish_length"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilFishName">
@@ -57,7 +57,7 @@
         android:id="@+id/tilFishHeigth"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Высота рыбки"
+        android:hint="@string/fish_height"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilFishLength">
@@ -74,7 +74,7 @@
         android:id="@+id/tilFishKind"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Вид рыбки"
+        android:hint="@string/fish_kind"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilFishHeigth">

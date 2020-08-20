@@ -1,21 +1,13 @@
 package com.example.testapplication;
 
 
-import android.content.DialogInterface;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.widget.PopupMenu;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.os.CancellationSignal;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -32,7 +24,7 @@ import moxy.presenter.InjectPresenter;
 
 import static android.content.Context.MODE_PRIVATE;
 
-public class FishListFragment extends MvpAppCompatFragment implements FishListFragmentView, RemoveClickListner, AddFishClickListener {
+public class FishListFragment extends MvpAppCompatFragment implements FishListFragmentView, RemoveClickListener, AddFishClickListener {
 
     @InjectPresenter
     FishListFragmentPresenter mFishListFragmentPresenter;
@@ -48,22 +40,17 @@ public class FishListFragment extends MvpAppCompatFragment implements FishListFr
 
 
     ArrayList<Fish> fishes = new ArrayList<>();
-    //ArrayList<Fish> defaultFishList = new ArrayList<>();
     final ArrayList<Fish> defaultFishList = new ArrayList(Arrays.asList(new Fish("Заглушка", 0, 0, "?")));
-    private  ArrayList<String> fishKinds = new ArrayList<>();
-
+    private ArrayList<String> fishKinds = new ArrayList<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.v("===>", "On create");
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        Log.v("===>", "On create View");
 
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fish_list_fragment, container, false);
@@ -91,15 +78,12 @@ public class FishListFragment extends MvpAppCompatFragment implements FishListFr
 
     @Override
     public void addFish() {
-        Log.v("===>", "add fish");
         dialog = AddFishDialog.getDialog(getActivity(), this, fishKinds);
         dialog.show();
-        //getFishValues();
     }
 
     @Override
     public void onAddFishInDialogClick(String name, float length, float height, String kind) {
-        Log.v("===>", "OK button");
         fishKinds.add(kind);
         fishes.add(new Fish(name, length, height, kind));
         adapter.notifyData(fishes);

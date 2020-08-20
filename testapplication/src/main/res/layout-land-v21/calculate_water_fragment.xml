@@ -20,7 +20,7 @@
             android:layout_marginEnd="4dp"
             android:layout_marginRight="4dp"
             android:layout_weight="1"
-            android:hint="Объём аквариума"
+            android:hint="@string/aquarium_value"
             app:layout_constraintEnd_toStartOf="@+id/tfAquariumTemperature"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -44,7 +44,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
-            android:hint="Текущая температура воды"
+            android:hint="@string/aquarium_temperature"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/еаAquariumValue"
             app:layout_constraintTop_toTopOf="@+id/еаAquariumValue">
@@ -69,7 +69,7 @@
             android:layout_marginEnd="4dp"
             android:layout_marginRight="4dp"
             android:layout_weight="1"
-            android:hint="Желаемая температура воды"
+            android:hint="@string/wish_temperature"
             app:layout_constraintEnd_toStartOf="@+id/tfHaveTemperature"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/еаAquariumValue">
@@ -93,7 +93,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
-            android:hint="Температура имеющийся воды для замены"
+            android:hint="@string/have_temperature"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tfWishTemperature"
             app:layout_constraintTop_toTopOf="@+id/tfWishTemperature">
@@ -118,7 +118,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
-            android:text="Расчитать необходимый объём воды для замены"
+            android:text="@string/calculate_water_value"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tfHaveTemperature" />
@@ -128,7 +128,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text=" Необходимый объём воды для замены:"
+            android:text="@string/required_amount_water_to_replace"
             app:layout_constraintStart_toStartOf="@+id/еаAquariumValue"
             app:layout_constraintTop_toBottomOf="@+id/btCount" />
 

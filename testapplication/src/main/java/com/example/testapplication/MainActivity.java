@@ -15,10 +15,6 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity {
 
     NavController navController;
-//    @BindView(R.id.bottomNavigationView)
-//    BottomNavigationView bottomNavigationView;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

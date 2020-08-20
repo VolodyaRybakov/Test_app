@@ -1,5 +1,5 @@
 package com.example.testapplication;
 
-public interface RemoveClickListner {
+public interface RemoveClickListener {
     void OnRemoveClick(int index);
 }

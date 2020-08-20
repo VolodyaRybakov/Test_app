@@ -10,5 +10,5 @@ public interface CalculateWaterFragmentView extends MvpView {
     @StateStrategyType(AddToEndSingleStrategy.class)
     void printResult(String value);
     @StateStrategyType(AddToEndSingleStrategy.class)
-    void printError(String message);
+    void printError(int message);
 }

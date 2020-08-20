@@ -2,8 +2,6 @@ package com.example.testapplication;
 
 import android.app.Activity;
 import android.content.DialogInterface;
-import android.text.Editable;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -11,19 +9,16 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.widget.AppCompatAutoCompleteTextView;
 
 import java.util.ArrayList;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class AddFishDialog {
 
     public static AlertDialog getDialog(Activity activity, FishListFragment listener, ArrayList<String> fishKinds) {
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 
-        View view = activity.getLayoutInflater().inflate(R.layout.add_fish_dialog, null); // Получаем layout по его ID
+        View view = activity.getLayoutInflater().inflate(R.layout.add_fish_dialog, null);
 
         builder.setView(view);
         builder.setCancelable(true);
@@ -47,7 +42,7 @@ public class AddFishDialog {
 
                 if (name.isEmpty() || strHeight.isEmpty() || strLength.isEmpty() || kind.isEmpty()) {
                     Toast.makeText(activity.getApplicationContext(),
-                            "Данные были введены неверно или неполностью. Рыбку добавлять не будем",
+                            R.string.incorrect_data,
                             Toast.LENGTH_SHORT).show();
                 }
 

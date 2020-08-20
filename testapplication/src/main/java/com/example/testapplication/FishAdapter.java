@@ -1,14 +1,12 @@
 package com.example.testapplication;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -18,13 +16,12 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class FishAdapter extends RecyclerView.Adapter<FishAdapter.FishViewHolder> {
 
     private LayoutInflater inflater;
     private ArrayList<Fish> fishes;
-    private RemoveClickListner mListener;
+    private RemoveClickListener mListener;
 
     public FishAdapter(Context context, ArrayList<Fish> fishes, FishListFragment listener){
         this.fishes = fishes;
@@ -77,12 +74,6 @@ public class FishAdapter extends RecyclerView.Adapter<FishAdapter.FishViewHolder
         public FishViewHolder(View view) {
             super(view);
             ButterKnife.bind(this, view);
-            mainLayout.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(itemView.getContext(), "Position:" + Integer.toString(getPosition()), Toast.LENGTH_SHORT).show();
-                }
-            });
 
             mDeleteButton.setOnClickListener(new AdapterView.OnClickListener() {
                 @Override

@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import moxy.InjectViewState;
 import moxy.MvpPresenter;
 
-import static android.content.Context.MODE_PRIVATE;
 
 @InjectViewState
 public class FishListFragmentPresenter extends MvpPresenter<FishListFragmentView> {
