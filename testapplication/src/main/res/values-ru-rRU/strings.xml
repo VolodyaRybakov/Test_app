@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Aquarium calculator</string>
+        <string name="incorrect_data">Данные были введены неверно или неполностью. Рыбку добавлять не будем.</string>
+        <string name="not_enough_data">Недостаточно данных для проведения расчётов</string>
+        <string name="unreal_temperature">Данной температуры достичь невозможно</string>
+        <string name="plug">Заглушка</string>
+        <string name="input_fish_params">Укажите параметры своей рыбки</string>
+        <string name="fish_name">Имя рыбки</string>
+        <string name="fish_length">Длина рыбки</string>
+        <string name="fish_height">Высота рыбки</string>
+        <string name="fish_kind">Вид рыбки</string>
+        <string name="aquarium_value">Объём аквариума</string>
+        <string name="aquarium_temperature">Текущая температура воды</string>
+        <string name="wish_temperature">Желаемая температура воды</string>
+        <string name="have_temperature">Температура имеющийся воды для замены</string>
+        <string name="calculate_water_value">Расчитать необходимый объём воды для замены</string>
+        <string name="required_amount_water_to_replace"> Необходимый объём воды для замены:</string>
+        <string name="f_name">Имя рыбки:</string>
+        <string name="fish_size">Размер рыбки:</string>
+        <string name="f_kind">Вид рыбки:</string>
+        <string name="my_aquarium">мой аквариум</string>
+        <string name="my_fishes">мои рыбки</string>
+        <string name="about">О программе</string>
+        <string name="content_description_about">Описание программы</string>
+        <string name="version_code">Код версии:</string>
+        <string name="version_name">Версия:</string>
+        <string name="connect_with_us">Свяжитесь с нами</string>
+</resources>

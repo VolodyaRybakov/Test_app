@@ -1,10 +1,13 @@
 package com.example.testapplication;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
@@ -16,6 +19,7 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity {
 
     NavController navController;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +29,38 @@ public class MainActivity extends AppCompatActivity {
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
+
+        mToolbar = findViewById(R.id.topAppBar);
+        setSupportActionBar(mToolbar);
+
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.top_app_bar, menu);
+        return true;
+    }
+
+    public static int getVersionCode() {
+        return BuildConfig.VERSION_CODE;
+    }
+
+    public static String getVersionName() {
+        return BuildConfig.VERSION_NAME;
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.about_fragment) {
+            AlertDialog dialog;
+            dialog = ShowAboutDialog.getDialog(this);
+            dialog.show();
+            return true;
+        }
         NavigationUI.onNavDestinationSelected(item, navController);
         return super.onOptionsItemSelected(item);
     }
