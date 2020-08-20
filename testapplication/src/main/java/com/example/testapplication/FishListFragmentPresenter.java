@@ -16,7 +16,6 @@ import static android.content.Context.MODE_PRIVATE;
 @InjectViewState
 public class FishListFragmentPresenter extends MvpPresenter<FishListFragmentView> {
 
-    private SharedPreferences sPref;
     final String SAVED_FISHES = "saved_fishes";
     final String SAVED_KINDS = "saved_kinds";
 
@@ -30,7 +29,7 @@ public class FishListFragmentPresenter extends MvpPresenter<FishListFragmentView
         SharedPreferences.Editor ed = sPref.edit();
         String json_fishes = new Gson().toJson(fishes);
         ed.putString(SAVED_FISHES, json_fishes);
-        ed.commit();
+        ed.apply();
     }
 
     public ArrayList<Fish> loadFishList(SharedPreferences sPref) {
@@ -48,7 +47,7 @@ public class FishListFragmentPresenter extends MvpPresenter<FishListFragmentView
         SharedPreferences.Editor ed = sPref.edit();
         String json_kinds = new Gson().toJson(kinds);
         ed.putString(SAVED_KINDS, json_kinds);
-        ed.commit();
+        ed.apply();
     }
 
     public ArrayList<String> loadFishKindsList(SharedPreferences sPref) {

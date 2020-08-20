@@ -1,7 +1,6 @@
 package com.example.testapplication;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,13 +17,12 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class FishAdapter extends RecyclerView.Adapter<FishAdapter.FishViewHolder> {
 
     private LayoutInflater inflater;
     private ArrayList<Fish> fishes;
-    private RemoveClickListner mListener;
+    private RemoveClickListener mListener;
 
     public FishAdapter(Context context, ArrayList<Fish> fishes, FishListFragment listener){
         this.fishes = fishes;

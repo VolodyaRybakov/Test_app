@@ -1,21 +1,14 @@
 package com.example.testapplication;
 
 
-import android.content.DialogInterface;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.widget.PopupMenu;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.os.CancellationSignal;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -32,7 +25,7 @@ import moxy.presenter.InjectPresenter;
 
 import static android.content.Context.MODE_PRIVATE;
 
-public class FishListFragment extends MvpAppCompatFragment implements FishListFragmentView, RemoveClickListner, AddFishClickListener {
+public class FishListFragment extends MvpAppCompatFragment implements FishListFragmentView, RemoveClickListener, AddFishClickListener {
 
     @InjectPresenter
     FishListFragmentPresenter mFishListFragmentPresenter;

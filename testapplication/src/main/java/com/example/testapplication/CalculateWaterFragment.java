@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,18 +44,11 @@ public class CalculateWaterFragment extends MvpAppCompatFragment implements Calc
     TextView mAnswerView;
 
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Log.v("===>", "On create");
-    }
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        Log.v("===>", "On create view");
         View view = inflater.inflate(R.layout.calculate_water_fragment, container, false);
         unbinder = ButterKnife.bind(this, view);
         return view;
@@ -88,10 +79,11 @@ public class CalculateWaterFragment extends MvpAppCompatFragment implements Calc
 
     @Override
     public void printError(String message) {
-        Toast toast = Toast.makeText(getActivity().getApplicationContext(),
-                message,
-                Toast.LENGTH_SHORT);
-        toast.show();
+        if (isAdded()) {
+            Toast.makeText(getContext(),
+                    message,
+                    Toast.LENGTH_SHORT).show();
+        }
         final SpannableStringBuilder text = new SpannableStringBuilder("-");
         final ForegroundColorSpan style = new ForegroundColorSpan(Color.rgb(255, 0, 0));
         text.setSpan(style, 0, 1, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
@@ -101,7 +93,8 @@ public class CalculateWaterFragment extends MvpAppCompatFragment implements Calc
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        unbinder.unbind();
+        if (unbinder != null)
+            unbinder.unbind();
     }
 
 }

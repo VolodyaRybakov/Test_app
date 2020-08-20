@@ -3,6 +3,7 @@ package com.example.testapplication;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -18,8 +19,6 @@ public class MainActivity extends AppCompatActivity {
 //    @BindView(R.id.bottomNavigationView)
 //    BottomNavigationView bottomNavigationView;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         NavigationUI.onNavDestinationSelected(item, navController);
         return super.onOptionsItemSelected(item);
     }
