@@ -18,6 +18,7 @@ public class FishListFragmentPresenter extends MvpPresenter<FishListFragmentView
 
     private SharedPreferences sPref;
     final String SAVED_FISHES = "saved_fishes";
+    final String SAVED_KINDS = "saved_kinds";
 
     public FishListFragmentPresenter() {}
 
@@ -41,6 +42,24 @@ public class FishListFragmentPresenter extends MvpPresenter<FishListFragmentView
             fishes = gson.fromJson(savedText, type);
         }
         return fishes;
+    }
+
+    public void saveFishKindsList(SharedPreferences sPref, ArrayList<String> kinds){
+        SharedPreferences.Editor ed = sPref.edit();
+        String json_kinds = new Gson().toJson(kinds);
+        ed.putString(SAVED_KINDS, json_kinds);
+        ed.commit();
+    }
+
+    public ArrayList<String> loadFishKindsList(SharedPreferences sPref) {
+        ArrayList<String> kinds = new ArrayList<>();
+        if(sPref.contains(SAVED_KINDS)) {
+            String savedText = sPref.getString(SAVED_KINDS, "");
+            Gson gson = new Gson();
+            Type type = new TypeToken<ArrayList<String>>(){}.getType();
+            kinds = gson.fromJson(savedText, type);
+        }
+        return kinds;
     }
 
 }

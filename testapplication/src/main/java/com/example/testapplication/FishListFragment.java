@@ -50,6 +50,7 @@ public class FishListFragment extends MvpAppCompatFragment implements FishListFr
     ArrayList<Fish> fishes = new ArrayList<>();
     //ArrayList<Fish> defaultFishList = new ArrayList<>();
     final ArrayList<Fish> defaultFishList = new ArrayList(Arrays.asList(new Fish("Заглушка", 0, 0, "?")));
+    private  ArrayList<String> fishKinds = new ArrayList<>();
 
 
     @Override
@@ -73,6 +74,7 @@ public class FishListFragment extends MvpAppCompatFragment implements FishListFr
         mRecyclerView.setAdapter(adapter);
 
         fishes = mFishListFragmentPresenter.loadFishList(getActivity().getPreferences(MODE_PRIVATE));
+        fishKinds = mFishListFragmentPresenter.loadFishKindsList(getActivity().getPreferences(MODE_PRIVATE));
         if (fishes.size() == 0) {
             adapter.notifyData(defaultFishList);
         } else {
@@ -89,12 +91,8 @@ public class FishListFragment extends MvpAppCompatFragment implements FishListFr
 
     @Override
     public void addFish() {
-        Toast toast = Toast.makeText(getActivity().getApplicationContext(),
-                "Вы нажали на кнопочку",
-                Toast.LENGTH_SHORT);
-        toast.show();
         Log.v("===>", "add fish");
-        dialog = AddFishDialog.getDialog(getActivity(), this);
+        dialog = AddFishDialog.getDialog(getActivity(), this, fishKinds);
         dialog.show();
         //getFishValues();
     }
@@ -102,10 +100,11 @@ public class FishListFragment extends MvpAppCompatFragment implements FishListFr
     @Override
     public void onAddFishInDialogClick(String name, float length, float height, String kind) {
         Log.v("===>", "OK button");
-
+        fishKinds.add(kind);
         fishes.add(new Fish(name, length, height, kind));
         adapter.notifyData(fishes);
         mFishListFragmentPresenter.saveFishList(getActivity().getPreferences(MODE_PRIVATE), fishes);
+        mFishListFragmentPresenter.saveFishKindsList(getActivity().getPreferences(MODE_PRIVATE), fishKinds);
     }
 
     @Override
