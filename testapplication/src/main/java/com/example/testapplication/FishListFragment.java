@@ -2,6 +2,7 @@ package com.example.testapplication;
 
 
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -27,6 +29,8 @@ import butterknife.OnClick;
 import butterknife.Unbinder;
 import moxy.MvpAppCompatFragment;
 import moxy.presenter.InjectPresenter;
+
+import static android.content.Context.MODE_PRIVATE;
 
 public class FishListFragment extends MvpAppCompatFragment implements FishListFragmentView, RemoveClickListner, AddFishClickListener {
 
@@ -44,6 +48,9 @@ public class FishListFragment extends MvpAppCompatFragment implements FishListFr
 
 
     ArrayList<Fish> fishes = new ArrayList<>();
+    //ArrayList<Fish> defaultFishList = new ArrayList<>();
+    final ArrayList<Fish> defaultFishList = new ArrayList(Arrays.asList(new Fish("Заглушка", 0, 0, "?")));
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -60,22 +67,19 @@ public class FishListFragment extends MvpAppCompatFragment implements FishListFr
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fish_list_fragment, container, false);
 
-        setInitialData();
-
         unbinder = ButterKnife.bind(this, view);
 
         adapter = new FishAdapter(getContext(), fishes, this);
         mRecyclerView.setAdapter(adapter);
 
-        return view;
-    }
+        fishes = mFishListFragmentPresenter.loadFishList(getActivity().getPreferences(MODE_PRIVATE));
+        if (fishes.size() == 0) {
+            adapter.notifyData(defaultFishList);
+        } else {
+            adapter.notifyData(fishes);
+        }
 
-    private void setInitialData() {
-        fishes.add(new Fish("1", 1, 1, "1"));
-        fishes.add(new Fish("2", 2, 2, "2"));
-        fishes.add(new Fish("3", 3, 3, "3"));
-        fishes.add(new Fish("4", 4, 4, "4"));
-        fishes.add(new Fish("5", 5, 5, "5"));
+        return view;
     }
 
     @OnClick(R.id.add_fish)
@@ -95,22 +99,27 @@ public class FishListFragment extends MvpAppCompatFragment implements FishListFr
         //getFishValues();
     }
 
-    private void getFishValues() {
-
-    }
-
     @Override
     public void onAddFishInDialogClick(String name, float length, float height, String kind) {
         Log.v("===>", "OK button");
 
         fishes.add(new Fish(name, length, height, kind));
         adapter.notifyData(fishes);
+        mFishListFragmentPresenter.saveFishList(getActivity().getPreferences(MODE_PRIVATE), fishes);
     }
 
     @Override
     public void OnRemoveClick(int index) {
-        fishes.remove(index);
-        adapter.notifyData(fishes);
+        if (fishes.size() > 1) {
+            fishes.remove(index);
+            adapter.notifyData(fishes);
+        } else if (fishes.size() == 1) {
+            fishes.remove(index);
+            adapter.notifyData(defaultFishList);
+        } else {
+            adapter.notifyData(defaultFishList);
+        }
+        mFishListFragmentPresenter.saveFishList(getActivity().getPreferences(MODE_PRIVATE), fishes);
     }
 
     @Override

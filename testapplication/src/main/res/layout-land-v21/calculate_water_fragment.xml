@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="4dp"
             android:layout_marginRight="4dp"
             android:layout_weight="1"
@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="4dp"
             android:layout_marginRight="4dp"
             android:layout_weight="1"
@@ -115,7 +115,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
             android:text="Расчитать необходимый объём воды для замены"
@@ -127,10 +127,10 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:text=" Необходимый объём воды для замены:"
             app:layout_constraintStart_toStartOf="@+id/еаAquariumValue"
-            app:layout_constraintTop_toBottomOf="@+id/btCount"/>
+            app:layout_constraintTop_toBottomOf="@+id/btCount" />
 
         <TextView
             android:id="@+id/tvAnswer"
