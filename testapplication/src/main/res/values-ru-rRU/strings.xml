@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Aquarium calculator</string>
         <string name="incorrect_data">Данные были введены неверно или неполностью. Рыбку добавлять не будем.</string>
         <string name="not_enough_data">Недостаточно данных для проведения расчётов</string>
         <string name="unreal_temperature">Данной температуры достичь невозможно</string>
@@ -26,4 +25,8 @@
         <string name="version_code">Код версии:</string>
         <string name="version_name">Версия:</string>
         <string name="connect_with_us">Свяжитесь с нами</string>
+    <string name="about_description">Приложение полностью беплатное и будет развиваться со временем. Надеемс оно поможет вам следить за температурой в вашем аквариуме</string>
+    <string name="about_contacts">Есть идеи или вопросы? Свяжитесь с нами!</string>
+    <string name="playmarket_title">Оцените нас в Play Market!</string>
+    <string name="about_developers">Разработчики</string>
 </resources>

@@ -8,6 +8,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
@@ -56,9 +58,13 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.about_fragment) {
-            AlertDialog dialog;
-            dialog = ShowAboutDialog.getDialog(this);
-            dialog.show();
+            ShowAboutDialog dialog;
+            dialog = new ShowAboutDialog();
+
+            FragmentTransaction ft = ((FragmentActivity) this).getSupportFragmentManager().beginTransaction();
+
+            dialog.show(ft, "ABOUT");
+
             return true;
         }
         NavigationUI.onNavDestinationSelected(item, navController);

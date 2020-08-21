@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<!--    <style name="Theme.MaterialComponents.ViewInflaterTest" parent="Theme.MaterialComponents.Light.Bridge">-->
-<!--        &lt;!&ndash; Main theme colors &ndash;&gt;-->
-<!--        <item name="android:colorPrimary">@color/primary</item>-->
-<!--        <item name="android:colorPrimaryDark">@color/primary_dark</item>-->
-<!--        <item name="android:colorAccent">@color/accent</item>-->
-<!--        <item name="android:textColorPrimary">@color/primary_text</item>-->
-<!--        <item name="android:textColorSecondary">@color/secondary_text</item>-->
-<!--    </style>-->
+    <!--    <style name="Theme.MaterialComponents.ViewInflaterTest" parent="Theme.MaterialComponents.Light.Bridge">-->
+    <!--        &lt;!&ndash; Main theme colors &ndash;&gt;-->
+    <!--        <item name="android:colorPrimary">@color/primary</item>-->
+    <!--        <item name="android:colorPrimaryDark">@color/primary_dark</item>-->
+    <!--        <item name="android:colorAccent">@color/accent</item>-->
+    <!--        <item name="android:textColorPrimary">@color/primary_text</item>-->
+    <!--        <item name="android:textColorSecondary">@color/secondary_text</item>-->
+    <!--    </style>-->
+
+    <style name="FullScreenDialogStyle" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorPrimary">@color/primary</item>
+
+        <!-- Set this to true if you want Full Screen without status bar -->
+        <item name="android:windowFullscreen">false</item>
+
+        <item name="android:windowIsFloating">false</item>
+
+        <!-- This is important! Don't forget to set window background -->
+        <item name="android:windowBackground">#FFFFFF</item>
+
+        <!-- Additionally if you want animations when dialog opening -->
+    </style>
 </resources>

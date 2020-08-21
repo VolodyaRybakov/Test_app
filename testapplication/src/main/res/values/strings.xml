@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Aquarium calculator</string>
+    <string name="app_name" translatable="false">Aquarium calculator</string>
     <string name="incorrect_data">The data was entered incorrectly or incompletely. We will not add fish.</string>
     <string name="not_enough_data">Insufficient data to make calculations</string>
     <string name="unreal_temperature">This temperature cannot be reached</string>
@@ -25,4 +25,8 @@
     <string name="version_code">Version code:</string>
     <string name="version_name">Version name:</string>
     <string name="connect_with_us">Connect with us</string>
+    <string name="about_description">The app is completely free and will evolve over time. Hopefully it will help you keep track of the temperature in your aquarium.</string>
+    <string name="about_contacts">Have ideas or questions? Contact us!</string>
+    <string name="playmarket_title">Rate us in Play Market!</string>
+    <string name="about_developers">Developers</string>
 </resources>
