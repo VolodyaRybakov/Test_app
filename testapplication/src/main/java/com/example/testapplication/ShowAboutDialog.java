@@ -34,7 +34,7 @@ public class ShowAboutDialog extends DialogFragment {
         return new AboutPage(getContext())
                 .isRTL(false)
                 .setDescription(getString(R.string.about_description))
-                .setImage(R.drawable.main_logo_akva)
+                .setImage(R.mipmap.main_logo_akva)
                 .addPlayStore("com.AqulaSoft.AquariumCalculator", getString(R.string.playmarket_title))
                 .addItem(versionElement)
 
