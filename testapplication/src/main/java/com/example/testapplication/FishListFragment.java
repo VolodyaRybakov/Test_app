@@ -1,12 +1,14 @@
 package com.example.testapplication;
 
 
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,6 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -42,7 +46,7 @@ public class FishListFragment extends MvpAppCompatFragment implements FishListFr
 
 
     ArrayList<Fish> fishes = new ArrayList<>();
-    private ArrayList<String> fishKinds = new ArrayList<>();
+    private HashSet<String> fishKinds;
 
 
     @Override
@@ -61,10 +65,26 @@ public class FishListFragment extends MvpAppCompatFragment implements FishListFr
 
         adapter = new FishAdapter(getContext(), fishes, this);
         mRecyclerView.setAdapter(adapter);
+        mRecyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
+
+            @Override
+            public void getItemOffsets(@NonNull Rect outRect, @NonNull View view, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
+                super.getItemOffsets(outRect, view, parent, state);
+
+                if (parent.getChildAdapterPosition(view) != 0) {
+                    outRect.top = 30;
+                }
+                else
+                    outRect.top = 10;
+                outRect.left = 15;
+                outRect.right = 15;
+            }
+
+
+        });
 
         fishes = mFishListFragmentPresenter.loadFishList(getActivity().getPreferences(MODE_PRIVATE));
-        if (fishes.isEmpty())
-        {
+        if (fishes.isEmpty()) {
             mEmptyHint.setVisibility(View.VISIBLE);
         }
         fishKinds = mFishListFragmentPresenter.loadFishKindsList(getActivity().getPreferences(MODE_PRIVATE));

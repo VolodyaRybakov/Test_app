@@ -65,8 +65,6 @@ public class FishAdapter extends RecyclerView.Adapter<FishAdapter.FishViewHolder
         TextView mFishLengthView;
         @BindView(R.id.kind)
         TextView mFishKindView;
-        @BindView(R.id.main_layout)
-        ConstraintLayout mainLayout;
         @BindView(R.id.deleteButton)
         AppCompatImageButton mDeleteButton;
 

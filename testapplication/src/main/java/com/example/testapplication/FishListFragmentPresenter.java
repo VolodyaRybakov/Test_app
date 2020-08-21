@@ -7,6 +7,7 @@ import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 import moxy.InjectViewState;
 import moxy.MvpPresenter;
@@ -41,20 +42,28 @@ public class FishListFragmentPresenter extends MvpPresenter<FishListFragmentView
         return fishes;
     }
 
-    public void saveFishKindsList(SharedPreferences sPref, ArrayList<String> kinds){
+    public void saveFishKindsList(SharedPreferences sPref, HashSet<String> kinds) {
         SharedPreferences.Editor ed = sPref.edit();
         String json_kinds = new Gson().toJson(kinds);
         ed.putString(SAVED_KINDS, json_kinds);
         ed.apply();
     }
 
-    public ArrayList<String> loadFishKindsList(SharedPreferences sPref) {
-        ArrayList<String> kinds = new ArrayList<>();
-        if(sPref.contains(SAVED_KINDS)) {
+    public HashSet<String> loadFishKindsList(SharedPreferences sPref) {
+
+        HashSet<String> kinds = null;
+        if (sPref.contains(SAVED_KINDS)) {
             String savedText = sPref.getString(SAVED_KINDS, "");
             Gson gson = new Gson();
-            Type type = new TypeToken<ArrayList<String>>(){}.getType();
-            kinds = gson.fromJson(savedText, type);
+            Type type = new TypeToken<ArrayList<String>>() {
+            }.getType();
+            ArrayList<String> arrayResult = gson.fromJson(savedText, type);
+            if (arrayResult != null)
+                kinds = new HashSet<>(arrayResult);
+        }
+
+        if (kinds != null) {
+            kinds = new HashSet<>();
         }
         return kinds;
     }

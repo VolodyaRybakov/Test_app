@@ -9,11 +9,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 
 public class AddFishDialog {
 
-    public static AlertDialog getDialog(Activity activity, FishListFragment listener, ArrayList<String> fishKinds) {
+    public static AlertDialog getDialog(Activity activity, FishListFragment listener, HashSet<String> fishKinds) {
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 
         View view = activity.getLayoutInflater().inflate(R.layout.add_fish_dialog, null); // Получаем layout по его ID
@@ -23,7 +23,7 @@ public class AddFishDialog {
 
         AutoCompleteTextView kindView = view.findViewById(R.id.etFishKind);
         if (fishKinds.size() > 0) {
-            kindView.setAdapter(new ArrayAdapter<>(view.getContext(), R.layout.simple_list_item, R.id.fish_kind_list_item, fishKinds));
+            kindView.setAdapter(new ArrayAdapter<>(view.getContext(), R.layout.simple_list_item, R.id.fish_kind_list_item, fishKinds.toArray(new String[]{})));
         }
 
         builder.setPositiveButton(android.R.string.ok, (dialog, which) -> {
