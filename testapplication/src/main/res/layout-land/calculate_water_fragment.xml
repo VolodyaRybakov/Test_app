@@ -18,13 +18,15 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="4dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="@color/accent"
             android:layout_weight="1"
             android:hint="@string/aquarium_value"
             app:layout_constraintEnd_toStartOf="@+id/tfAquariumTemperature"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etAquariumValue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -38,6 +40,8 @@
             android:id="@+id/tfAquariumTemperature"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="@color/accent"
             android:layout_marginStart="4dp"
             android:layout_weight="1"
             android:hint="@string/aquarium_temperature"
@@ -45,7 +49,7 @@
             app:layout_constraintStart_toEndOf="@+id/еаAquariumValue"
             app:layout_constraintTop_toTopOf="@+id/еаAquariumValue">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etAquariumTemperature"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -60,6 +64,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="@color/accent"
             android:layout_marginEnd="4dp"
             android:layout_weight="1"
             android:hint="@string/wish_temperature"
@@ -67,7 +73,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/еаAquariumValue">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etWishTemperature"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -83,12 +89,14 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:layout_weight="1"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="@color/accent"
             android:hint="@string/have_temperature"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tfWishTemperature"
             app:layout_constraintTop_toTopOf="@+id/tfWishTemperature">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etHaveTemperature"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -98,15 +106,17 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:padding="10dp"
             android:id="@+id/btCount"
+            android:textSize="14sp"
             android:layout_width="match_parent"
+            app:strokeColor="@color/accent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="20dp"
             android:text="@string/calculate_water_value"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

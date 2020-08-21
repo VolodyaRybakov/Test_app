@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -13,8 +11,6 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="@string/input_fish_params"
-        android:background="@color/primaryColor"
-        android:textColor="@color/primaryTextColor"
         android:textSize="18sp"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,7 +26,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dialog_header">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etFishName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -46,7 +42,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilFishName">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etFishLength"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -63,7 +59,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilFishLength">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etFishHeigth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -80,7 +76,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilFishHeigth">
 
-        <AutoCompleteTextView
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
             style="@style/Widget.MaterialComponents.AutoCompleteTextView.FilledBox"
             android:id="@+id/etFishKind"
             android:layout_width="match_parent"
