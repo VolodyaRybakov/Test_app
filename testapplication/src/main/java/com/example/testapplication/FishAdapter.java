@@ -6,9 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -68,7 +70,7 @@ public class FishAdapter extends RecyclerView.Adapter<FishAdapter.FishViewHolder
         @BindView(R.id.main_layout)
         ConstraintLayout mainLayout;
         @BindView(R.id.deleteButton)
-        Button mDeleteButton;
+        AppCompatImageButton mDeleteButton;
 
 
         public FishViewHolder(View view) {

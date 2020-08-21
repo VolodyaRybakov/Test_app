@@ -25,16 +25,17 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="0dp"
+        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
-        app:itemIconTint="#ffffff"
-        android:background="?android:attr/windowBackground"
+        app:itemTextColor="#000"
+        app:itemIconTint="#000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/bottom_nav_menu"
-        app:itemRippleColor="@color/primaryDarkColor"/>
+        app:itemRippleColor="#c0ccc9"/>
 
     <fragment
         android:id="@+id/nav_host_fragment"
