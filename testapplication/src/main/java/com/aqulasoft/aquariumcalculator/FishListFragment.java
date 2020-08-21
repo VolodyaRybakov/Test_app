@@ -1,4 +1,4 @@
-package com.example.testapplication;
+package com.aqulasoft.aquariumcalculator;
 
 
 import android.graphics.Rect;
@@ -17,7 +17,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Set;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

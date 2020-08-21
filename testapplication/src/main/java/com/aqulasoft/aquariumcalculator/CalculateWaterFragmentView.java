@@ -1,4 +1,4 @@
-package com.example.testapplication;
+package com.aqulasoft.aquariumcalculator;
 
 import moxy.MvpView;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;

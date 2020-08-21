@@ -1,4 +1,4 @@
-package com.example.testapplication;
+package com.aqulasoft.aquariumcalculator;
 
 public class Fish {
     private String name;

@@ -1,4 +1,4 @@
-package com.example.testapplication;
+package com.aqulasoft.aquariumcalculator;
 
 import android.app.Dialog;
 import android.os.Bundle;

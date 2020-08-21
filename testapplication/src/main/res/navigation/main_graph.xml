@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/calculate_water_fragment"
-        android:name="com.example.testapplication.CalculateWaterFragment"
+        android:name="com.aqulasoft.aquariumcalculator.CalculateWaterFragment"
         android:label="fragment_1_title"
         tools:layout="@layout/calculate_water_fragment">
     </fragment>
     <fragment
         android:id="@+id/fish_list_fragment"
-        android:name="com.example.testapplication.FishListFragment"
+        android:name="com.aqulasoft.aquariumcalculator.FishListFragment"
         android:label="fragment_2_title"
         tools:layout="@layout/fish_list_fragment" />
 </navigation>
