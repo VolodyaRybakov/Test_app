@@ -5,8 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -77,13 +75,7 @@ public class FishAdapter extends RecyclerView.Adapter<FishAdapter.FishViewHolder
             super(view);
             ButterKnife.bind(this, view);
 
-            mDeleteButton.setOnClickListener(new AdapterView.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    mListener.OnRemoveClick(getAdapterPosition()
-                    );
-                }
-            });
+            mDeleteButton.setOnClickListener(view1 -> mListener.OnRemoveClick(getAdapterPosition()));
         }
     }
 }
