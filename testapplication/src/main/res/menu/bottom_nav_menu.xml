@@ -2,11 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/calculate_water_fragment"
-        android:icon="@drawable/aquarium"
+        android:icon="@mipmap/aquarium"
         android:title="@string/my_aquarium"/>
 
     <item android:id="@+id/fish_list_fragment"
-        android:icon="@drawable/fish"
+        android:icon="@mipmap/fish"
         android:title="@string/my_fishes"/>
 
 </menu>

@@ -5,18 +5,18 @@
         <item name="viewInflaterClass">
             com.google.android.material.theme.MaterialComponentsViewInflater
         </item>
-        <item name="android:colorPrimaryDark">@color/primary_dark</item>
+        <item name="android:colorPrimaryDark">@color/primaryDarkColor</item>
 
-        <item name="android:colorPrimary">@color/primary</item>
-        <item name="android:textColorPrimary">@color/primary_text</item>
-        <item name="android:drawable">@color/primary_text</item>
-        <item name="colorPrimary">@color/primary</item>
+        <item name="android:colorPrimary">@color/primaryColor</item>
+        <item name="android:textColorPrimary">@color/primaryTextColor</item>
+        <item name="android:drawable">@color/primaryTextColor</item>
+        <item name="colorPrimary">@color/primaryColor</item>
 
 
         <item name="android:colorAccent">@color/accent</item>
-        <item name="android:textColorSecondary">@color/secondary_text</item>
-        <item name="android:colorButtonNormal">@color/primary</item>
+        <item name="android:textColorSecondary">@color/secondaryTextColor</item>
+        <item name="android:colorButtonNormal">@color/primaryColor</item>
 
-        <item name="android:navigationBarColor">@color/primary_dark</item>
+        <item name="android:navigationBarColor">@color/primaryDarkColor</item>
     </style>
 </resources>
