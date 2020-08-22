@@ -62,7 +62,7 @@ public class FishListFragmentPresenter extends MvpPresenter<FishListFragmentView
                 kinds = new HashSet<>(arrayResult);
         }
 
-        if (kinds != null) {
+        if (kinds == null) {
             kinds = new HashSet<>();
         }
         return kinds;
