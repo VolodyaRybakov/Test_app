@@ -24,4 +24,24 @@
 
         <!-- Additionally if you want animations when dialog opening -->
     </style>
+
+    <style name="aquariumTittle">
+        <item name="android:textColor">@color/secondaryTextColor</item>
+        <item name="android:textSize">20sp</item>
+        <item name="fontFamily">@font/montserrat_bold</item>
+    </style>
+
+    <style name="aquariumSimpleText">
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="aquariumSimpleInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/icons</item>
+        <item name="hintTextColor">@color/icons</item>
+        <item name="boxCornerRadiusBottomEnd">40dp</item>
+        <item name="boxCornerRadiusBottomStart">40dp</item>
+        <item name="boxCornerRadiusTopEnd">40dp</item>
+        <item name="boxCornerRadiusTopStart">40dp</item>
+    </style>
 </resources>

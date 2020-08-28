@@ -30,4 +30,5 @@
     <string name="playmarket_title">Rate us in Play Market!</string>
     <string name="about_developers">Developers</string>
     <string name="empty_list">Your fish list is empty. Press bottom right button and add a new fish</string>
+    <string name="calculate_tittle">My Aquarium</string>
 </resources>

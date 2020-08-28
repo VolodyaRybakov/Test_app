@@ -30,4 +30,5 @@
         <string name="playmarket_title">Оцените нас в Play Market!</string>
         <string name="about_developers">Разработчики</string>
         <string name="empty_list">Ваш список рыб пуст. Нажмите нижнюю правую кнопку и добавьте новую рыбу</string>
+    <string name="calculate_tittle">My Aquarium</string>
 </resources>
