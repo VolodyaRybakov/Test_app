@@ -1,6 +1,7 @@
 package com.aqulasoft.aquariumcalculator;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -53,6 +54,13 @@ public class AddFishDialog {
 
         builder.setNegativeButton(android.R.string.cancel, (dialog, which) -> dialog.dismiss());
 
-        return builder.create();
+        AlertDialog dialog = builder.create();
+
+        dialog.setOnShowListener(arg0 -> {
+            dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK);
+            dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.BLACK);
+        });
+
+        return dialog;
     }
 }

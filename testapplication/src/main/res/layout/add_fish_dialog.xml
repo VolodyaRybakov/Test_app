@@ -8,12 +8,11 @@
 
     <TextView
         android:id="@+id/dialog_header"
+        style="@style/aquariumTittle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="@string/input_fish_params"
-        android:textSize="18sp"
-        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,9 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/fish_name"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:boxStrokeColor="@color/accent"
-        app:hintTextColor="@color/accent"
+        style="@style/aquariumSimpleInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dialog_header">
@@ -34,6 +31,7 @@
             android:id="@+id/etFishName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="14sp"
             android:ems="10" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -43,9 +41,8 @@
         android:layout_height="wrap_content"
         android:hint="@string/fish_length"
         app:layout_constraintEnd_toEndOf="parent"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:boxStrokeColor="@color/accent"
-        app:hintTextColor="@color/accent"
+        style="@style/aquariumSimpleInput"
+        android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilFishName">
 
@@ -63,9 +60,8 @@
         android:layout_height="wrap_content"
         android:hint="@string/fish_height"
         app:layout_constraintEnd_toEndOf="parent"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:boxStrokeColor="@color/accent"
-        app:hintTextColor="@color/accent"
+        style="@style/aquariumSimpleInput"
+        android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilFishLength">
 
@@ -82,9 +78,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/fish_kind"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:boxStrokeColor="@color/accent"
-        app:hintTextColor="@color/accent"
+        style="@style/aquariumSimpleInput"
+        android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilFishHeigth">
@@ -94,7 +89,7 @@
             android:id="@+id/etFishKind"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:completionThreshold="0"
+            android:completionThreshold="1"
             android:ems="10" />
     </com.google.android.material.textfield.TextInputLayout>
 
