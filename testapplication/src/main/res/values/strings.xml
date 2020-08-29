@@ -15,7 +15,7 @@
     <string name="have_temperature">Water supply temperature for replacement</string>
     <string name="calculate_water_value">Calculate the required volume of water to replace</string>
     <string name="required_amount_water_to_replace"> Required amount of water to replace:</string>
-    <string name="f_name">Name:</string>
+    <string name="f_name">Name</string>
     <string name="fish_size">Size:</string>
     <string name="f_kind">Kind:</string>
     <string name="my_aquarium">my aquarium</string>

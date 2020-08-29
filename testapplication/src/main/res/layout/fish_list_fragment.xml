@@ -22,7 +22,7 @@
         <ImageView
             android:layout_gravity="center"
             android:layout_width="wrap_content"
-            android:src="@mipmap/ic_notfound"
+            android:src="@mipmap/background_aquarium"
             android:layout_height="wrap_content" />
 
         <TextView
@@ -37,7 +37,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -49,8 +50,8 @@
         android:layout_marginBottom="8dp"
         android:backgroundTint="@color/accent"
         android:clickable="true"
-        app:borderWidth="0dp"
-        android:src="@android:drawable/ic_input_add"
+        android:src="@drawable/ic_add"
+        app:tint="@color/primaryColor"
         app:layout_constraintBottom_toBottomOf="parent"
         android:focusable="true"
         app:layout_constraintEnd_toEndOf="parent" />

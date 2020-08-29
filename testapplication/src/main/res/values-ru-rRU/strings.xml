@@ -15,7 +15,7 @@
         <string name="have_temperature">Температура имеющийся воды для замены</string>
         <string name="calculate_water_value">Расчитать необходимый объём воды для замены</string>
         <string name="required_amount_water_to_replace"> Необходимый объём воды для замены:</string>
-        <string name="f_name">Имя рыбки:</string>
+        <string name="f_name">Имя рыбки</string>
         <string name="fish_size">Размер:</string>
         <string name="f_kind">Вид:</string>
         <string name="my_aquarium">мой аквариум</string>
