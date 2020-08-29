@@ -3,10 +3,12 @@
 
     <item android:id="@+id/calculate_water_fragment"
         android:icon="@mipmap/aquarium"
+        android:enabled="true"
         android:title="@string/my_aquarium"/>
 
     <item android:id="@+id/fish_list_fragment"
-        android:icon="@mipmap/fish"
+        android:icon="@mipmap/fishes"
+        android:enabled="true"
         android:title="@string/my_fishes"/>
 
 </menu>

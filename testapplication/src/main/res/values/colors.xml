@@ -5,15 +5,15 @@
     <color name="primaryLightColor">#fff</color>
     <color name="primaryDarkColor">#acd5d6</color>
 
-    <color name="accent">#42a5f5</color>
-    <color name="secondaryLightColor">#80d6ff</color>
-    <color name="secondaryDarkColor">#0077c2</color>
+    <color name="colorSurface">#ECF7FB</color>
+
+
+    <color name="accent">#7DD4F3</color>
     <color name="primaryTextColor">#000000</color>
     <color name="secondaryTextColor">#1D4FA5</color>
 
-    <color name="icons">#75CEF9</color>
-    <color name="divider">#BDBDBD</color>
+    <color name="icons">#7DD4F3</color>
 
-    <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#42a5f5</color>
+    <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#7DD4F3</color>
 
 </resources>
