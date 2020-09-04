@@ -11,4 +11,8 @@
         android:enabled="true"
         android:title="@string/my_fishes"/>
 
+    <item android:id="@+id/fish_encyclopedia_fragment"
+        android:enabled="true"
+        android:title="@string/fish_encyclopedia"/>
+
 </menu>

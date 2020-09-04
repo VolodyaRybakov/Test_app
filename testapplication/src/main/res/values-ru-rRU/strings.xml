@@ -31,4 +31,5 @@
         <string name="about_developers">Разработчики</string>
         <string name="empty_list">Ваш список рыб пуст. Нажмите нижнюю правую кнопку и добавьте новую рыбу</string>
     <string name="calculate_tittle">My Aquarium</string>
+        <string name="fish_encyclopedia">эциклопедия</string>
 </resources>

@@ -16,4 +16,9 @@
         android:name="com.aqulasoft.aquariumcalculator.FishListFragment"
         android:label="fragment_2_title"
         tools:layout="@layout/fish_list_fragment" />
+    <fragment
+        android:id="@+id/fish_encyclopedia_fragment"
+        android:name="com.aqulasoft.aquariumcalculator.FishEncyclopediaFragment"
+        android:label="fish_encyclopedia_fragment"
+        tools:layout="@layout/fish_encyclopedia_fragment" />
 </navigation>
